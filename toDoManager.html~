@@ -1,0 +1,180 @@
+<html>
+<head>
+<title>ToDo Manager</title>
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script> -->
+<script language="javascript">//type="text/javascript" src="toDoManager.js"> 
+//$(document).ready(function(){
+var idForListItem=1;
+var idNumber=0;
+function addTextBox()
+{
+ var textBox = "<input type='text' id = 'textBox1' value='' >";
+ document.getElementById("placeForTextBox").innerHTML = textBox;
+}
+function addPlace(textBoxContent)
+{
+ //alert("entered into addPlaceElemennt");
+ idNumber=idNumber+1;
+ //alert(idNumber);
+ var parentTag=document.getElementById("placeForElemList");
+ var fontTag1=document.createElement("font");
+ var textNode1=document.createTextNode(textBoxContent);
+ fontTag1.appendChild(textNode1);
+ parentTag.appendChild(fontTag1);
+// var addChild = "<ln id="+idNumber+"> </ln>";
+// document.getElementById("olId").appendChild(addChild);
+ //alert("no gdbd");
+}
+function addButton()
+{
+ var addButton = "<input type='button' id='addBtn' value='Add'>";
+ document.getElementById("placeForAddBtn").innerHTML = addButton;
+}
+function placeElement()
+{
+ //alert("entered into placeElemennt");
+ var textBoxContent = document.getElementById("textBox1").value;
+ addPlace(textBoxContent);
+ //alert(textBoxContent);
+ //var previousElements = document.getElementById("placeForElemList").innerHTML;
+ //alert(previousElements);
+ //document.getElementById("placeForElemList").innerHTML=" ";
+ document.getElementById(idNumber).innerHTML=textBoxContent;//add textBox content to list
+ document.getElementById("placeForTextBox").innerHTML="";
+ 
+// document.getElementById("placeForElemList").append("kkkkkkkkk");
+}
+function removeElemButton() {
+ var elem = document.getElementById('addElemBtn');
+ elem.parentNode.removeChild(elem);
+}
+function clearTextBox()
+{
+ alert("In clearTextBox");
+ document.getElementById("textBox1").value="";
+}
+ 
+function addElement()
+{
+  //alert("Entered into addElement");
+   addTextBox();
+   removeElemButton();
+   addButton();
+   //placeElement();
+  //alert("textbox is displyed at this line");
+}
+/*function displayPopUp()
+{
+  alert("In displayPopUp()");
+  //object.id="selected";
+  //$( "#dialog-form" ).dialog( "open" );
+}*/
+
+   
+//});
+
+</script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+/*  $("#btn2").click(function(){
+    $("ol").append("<li>Appended item</li>");
+  }); 
+  $.idOfItem="#"+idForListItem; 
+  $($.idOfItem).click(function(){
+     alert("In li jquery");
+     displayPopUp();
+   
+    
+    
+  });*/
+
+
+/**/
+//$.idOfLi="#li"+idForListItem;
+/*$("#li").click(function(){
+     alert("display popup in jquery");
+     
+    
+  });*/
+//$.listItemId="#"+idForListItem;
+$("li").on("click",function(){
+ // alert("this"+this);
+  alert("on display popup in jquery");
+});
+
+
+
+  $.flag=0;//textbox not hidden
+  $("#placeForAddBtn").click(
+    function()
+     {
+      alert("In Jquery function");
+      if($.flag==0)
+       {
+        alert("flag=0");
+        $("#textBox1").hide();
+        $.flag=1;//textbox hidden 
+        //$("ol").append("<li onClick='openPoPup(this);' >"+x+"</li><ul id="+x+"><ul>");
+        //placeElement();//<ul id="+$.textBoxContent+"> child </ul> 
+        $.textBoxContent = document.getElementById("textBox1").value;
+        alert("Before adding element idForListItem"+idForListItem);
+        $.itemToBeAppended="<li>"+$.textBoxContent+"</li>";
+        alert("after adding element idForListItem"+idForListItem);
+        idForListItem=idForListItem+1;
+        alert("after increament idForListItem"+idForListItem);
+       $("ol").append($.itemToBeAppended);
+       }
+      else
+       {
+        alert("flag=1");
+        clearTextBox();
+        $("#textBox1").show();
+        $.flag=0;
+       }
+    
+    }// end function
+   );// end $("#placeForAddBtn").click
+});
+</script>
+
+
+<!--<script>
+$(document).ready(function(){
+  
+   $("#addBtn").click(function(){
+     alert("jquery working");
+   $("#textBox1").show();
+    //$("ol").append("<li>Appended item</li>");
+  });
+});
+</script> -->
+
+</head>
+
+<body>
+ <form >
+      <p id="placeForTextBox"></p>
+      <div style="text-align: center;float:left;" > 
+      <p id="placeForAddBtn"></p><br>
+      </div> 
+      <input type="button" name="btn" id="addElemBtn" value="Add" onclick="addElement()">
+      <div style="text-align: center;float:left;" >
+      <p id="placeForElemList"> </p> 
+      
+      
+      <ol id= "ol_id">
+        
+      </ol>
+      </div>
+      <!-- <button id="btn2">Append list item</button> -->
+      
+
+  </form>
+
+</body>
+
+</html>
+
