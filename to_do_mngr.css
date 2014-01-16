@@ -1,0 +1,17 @@
+#form{
+	width: 940px;
+	border:1px solid black;
+	margin: auto;
+	text-align: left;
+	background-color: lightskyblue;
+}
+#dialogForm{
+	background-color: orange;
+}
+#subForm{
+	height: 250px;
+	width: 500px
+}
+#addSubElement{
+	/*float:right;*/
+}

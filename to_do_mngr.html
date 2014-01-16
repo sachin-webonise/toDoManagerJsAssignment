@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+
+    <title>Now ToDo Manager</title>
+    <link rel="stylesheet" type="text/css" href="to_do_mngr.css">
+   
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <script src="to_do_mngr.js" type="text/javascript"> </script> 
+
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    
+
+  </head>
+
+  <body>
+  
+      <form id="form">
+        <input type="button" name="btn" id="addBtn" value="Add">
+        <input type="text" id="textBox" value="">
+        <ol id="ol_id">
+        </ol>
+      </form>
+      <div id="dialogForm" title="Add Sub Elements">
+        <form id="subForm">
+
+              <ol id="sub_ol_id">
+              </ol>
+              <input type="text" name="SubEvent" id="subTextBox" value="" class="text ui-widget-content ui-corner-all">
+              <input type="button" id="addSubElement" value="Add">
+              
+
+        </form>
+      </div>
+  </body>
+
+</html>
